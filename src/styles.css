@@ -1,5 +1,6 @@
 body {
-  background-image: url("./i/58020a8330991157c7f9107f.jpg"); }
+  background-image: url("./i/bg.png");
+  background-size: 100% auto; }
 
 app-left-sidebar {
   color: aliceblue; }
@@ -13,8 +14,13 @@ app-todo {
   app-todo .search-field {
     margin: 20px; }
   app-todo .todo-table {
-    text-align: center; }
+    text-align: center;
+    color: #da1b48; }
     app-todo .todo-table thead th:first-child {
       width: 7%; }
+    app-todo .todo-table thead th:nth-last-child(1) {
+      width: 10%; }
+    app-todo .todo-table thead th:nth-last-child(2) {
+      width: 10%; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,6 @@
 body {
-  background-image: url("./i/58020a8330991157c7f9107f.jpg");
+  background-image: url("./i/bg.png");
+  background-size: 100% auto;
 }
 
 app-left-sidebar {
@@ -18,9 +19,16 @@ app-todo {
   }
   .todo-table {
     text-align: center;
+    color: #da1b48;
     thead {
       th:first-child {
         width: 7%;
+      }
+      th:nth-last-child(1) {
+        width: 10%;
+      }
+      th:nth-last-child(2) {
+        width: 10%;
       }
     }
   }
