@@ -1,45 +1,50 @@
-import { Component, OnInit } from "@angular/core"
-import { ToDoModel } from "./model"
+import {Component, OnInit} from "@angular/core"
+import {ToDoModel} from "./model"
 
 @Component({
-  selector: 'app-todo',
-  template: `<div class="m-t-1 m-b-1 row search-field">
-      <div class="col-lg-6">
-          <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">Go!</button>
-      </span>
-              <input type="text" class="form-control" placeholder="Search for...">
-          </div>
-      </div>
-  </div>
+    selector: 'app-todo',
+    template: `
+        <h3 class="todo-header">ToDo list</h3>
+        <div class="m-t-1 m-b-1 row search-field">
+            <div class="col-lg-6">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">ADD!</button>
+                  </span>
+                    <input type="text" class="form-control" placeholder="Add something">
+                </div>
+            </div>
+        </div>
 
-  <table class="table table-striped table-bordered">
-      <thead>
-      <tr>
-          <th>To Do</th>
-          <th>Status</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-          <td>todo</td>
-          <td>no</td>
-      </tr>
-      </tbody>
-  </table>`,
-  styleUrls: ['./todo.component.css']
+        <table class="table table-striped table-bordered todo-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>To Do</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of model.getTodoItems(); let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item.action }}</td>
+                <td [ngSwitch] = "item.status">
+                    <span *ngSwitchCase="true"> Yes </span>
+                    <span *ngSwitchDefault> No </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>`
 })
 export class TodoComponent implements OnInit {
-  public model = new ToDoModel()
+    public model = new ToDoModel()
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  public getUserName() {
-    return this.model.user
-  }
+
 
 }
