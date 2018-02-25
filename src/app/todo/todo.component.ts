@@ -24,7 +24,7 @@ import { ToDoModel } from "./model"
       <tbody>
       <tr>
           <td>todo</td>
-          <td>yes</td>
+          <td>no</td>
       </tr>
       </tbody>
   </table>`,
