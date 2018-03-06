@@ -1,5 +1,5 @@
-import {Component, OnInit} from "@angular/core"
-import {ToDoModel} from "./model"
+import {Component, HostListener, OnInit, ViewChild} from "@angular/core"
+import {TodoItem, ToDoModel} from "./model"
 
 @Component({
     selector: 'app-todo',
@@ -9,9 +9,9 @@ import {ToDoModel} from "./model"
             <div class="col-lg-12">
                 <div class="input-group">
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">ADD!</button>
+                    <button  (click)="addItem(todoInput.value)" class="btn btn-secondary" type="button">ADD!</button>
                   </span>
-                    <input type="text" class="form-control" placeholder="Add something">
+                    <input #todoInput type="text" class="form-control" placeholder="Add something">
                 </div>
             </div>
         </div>
@@ -38,14 +38,22 @@ import {ToDoModel} from "./model"
             </tbody>
         </table>`
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent {
+    @ViewChild("todoInput") private todoInput
     public model = new ToDoModel()
 
-    constructor() {
+    @HostListener("keydown", ["$event"])
+    public onKeydown(event: KeyboardEvent) {
+        if (event.code === "Enter") {
+            this.addItem(this.todoInput.nativeElement.value)
+        }
     }
 
-    ngOnInit() {
+    public addItem(item): void {
+        if (item !== "") {
+            this.model.items.push(new TodoItem(item, false))
+            this.todoInput.nativeElement.value = ""
+        }
     }
-
-
 }
+
