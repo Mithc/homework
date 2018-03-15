@@ -25,6 +25,9 @@ app-todo {
 
 store {
   color: azure; }
+  store h3 {
+    text-align: center;
+    margin: 1em; }
   store .container {
     background: navy;
     display: grid;
@@ -33,9 +36,20 @@ store {
     padding-top: 10px;
     grid-gap: 1em; }
     store .container .products {
-      padding: 5px;
-      background: indigo;
-      border: 1px solid black; }
+      display: grid;
+      grid-gap: 1em;
+      padding: 5px; }
+      store .container .products .card {
+        color: navy !important;
+        height: auto; }
+        store .container .products .card .tag {
+          color: #da1b48; }
+        store .container .products .card .card-text {
+          padding: 1em; }
+          store .container .products .card .card-text:first-letter {
+            text-transform: capitalize; }
+    store .container .category {
+      grid-column: 1/2; }
     store .container .categories {
       padding: 5px;
       background: indigo;

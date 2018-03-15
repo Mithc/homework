@@ -6,7 +6,7 @@ import "rxjs/add/observable/from";
 @Injectable()
 export class StaticData {
     private products: Product [] = [
-        new Product(1, "Xiaomi 70 Meters Intelligent Traffic Recorder", "DVR", "запись видео 1920×1080", 3450),
+        new Product(1, "Xiaomi Traffic Recorder", "DVR", "запись видео 1920×1080", 3450),
         new Product(2, "AdvoCam FD Black", "DVR", "запись видео 1920×1080 при 30 к/с, с экраном 2.7\" 320×240", 4390),
         new Product(3, "Apple Watch Series 3", "smart-watch", "противоударные, влагозащищенные", 22390),
         new Product(4, "Xiaomi Mi Band 2", "smart-watch", "фитнес-браслет влагозащищенный сенсорный OLED-экран, 0.42\"", 1690),

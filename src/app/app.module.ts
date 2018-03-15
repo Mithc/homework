@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
@@ -24,7 +24,10 @@ import {StoreComponent} from "./shop/store/store.component";
     BrowserModule,
       FormsModule
   ],
-  providers: [ProducrRepository, StaticData],
+  providers: [ProducrRepository, StaticData, {
+      provide: LOCALE_ID,
+      useValue: 'ru-RU'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

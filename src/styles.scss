@@ -36,6 +36,10 @@ app-todo {
 
 store {
   color: azure;
+  h3 {
+    text-align: center;
+    margin: 1em;
+  }
   .container {
     background: navy;
     display: grid;
@@ -45,9 +49,28 @@ store {
     grid-gap: 1em;
 
     .products {
+      display: grid;
+      grid-gap: 1em;
       padding: 5px;
-      background: indigo;
-      border: 1px solid black;
+
+      .card {
+        color: navy !important;
+        height: auto;
+        .tag {
+          color: #da1b48;
+        }
+
+        .card-text{
+          padding: 1em;
+          &:first-letter {
+            text-transform: capitalize;
+          }
+        }
+
+      }
+    }
+    .category {
+      grid-column: 1/2;
     }
 
     .categories {
