@@ -1,5 +1,5 @@
 body {
-  background-image: url("./i/bg.png");
+  background-image: url("assets/i/bg.png");
   background-size: 2304px auto;
 }
 
@@ -30,6 +30,30 @@ app-todo {
       th:nth-last-child(2) {
         width: 10%;
       }
+    }
+  }
+}
+
+store {
+  color: azure;
+  .container {
+    background: navy;
+    display: grid;
+    grid-template-columns: 35% auto;
+    min-height: 700px;
+    padding-top: 10px;
+    grid-gap: 1em;
+
+    .products {
+      padding: 5px;
+      background: indigo;
+      border: 1px solid black;
+    }
+
+    .categories {
+      padding: 5px;
+      background: indigo;
+      border: 1px solid black;
     }
   }
 }

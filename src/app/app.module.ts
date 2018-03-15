@@ -5,6 +5,10 @@ import { TodoComponent } from './todo/todo.component';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from "@angular/forms";
+import { ShopComponent } from './shop/shop.component';
+import {ProducrRepository} from "./shop/model/product.repository";
+import {StaticData} from "./shop/model/model";
+import {StoreComponent} from "./shop/store/store.component";
 
 
 @NgModule({
@@ -12,13 +16,15 @@ import { FormsModule } from "@angular/forms";
     AppComponent,
     TodoComponent,
     LeftSidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    ShopComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,
       FormsModule
   ],
-  providers: [],
+  providers: [ProducrRepository, StaticData],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

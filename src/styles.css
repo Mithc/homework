@@ -1,5 +1,5 @@
 body {
-  background-image: url("./i/bg.png");
+  background-image: url("assets/i/bg.png");
   background-size: 2304px auto; }
 
 app-left-sidebar {
@@ -22,5 +22,23 @@ app-todo {
       width: 10%; }
     app-todo .todo-table thead th:nth-last-child(2) {
       width: 10%; }
+
+store {
+  color: azure; }
+  store .container {
+    background: navy;
+    display: grid;
+    grid-template-columns: 35% auto;
+    min-height: 700px;
+    padding-top: 10px;
+    grid-gap: 1em; }
+    store .container .products {
+      padding: 5px;
+      background: indigo;
+      border: 1px solid black; }
+    store .container .categories {
+      padding: 5px;
+      background: indigo;
+      border: 1px solid black; }
 
 /*# sourceMappingURL=styles.css.map */
